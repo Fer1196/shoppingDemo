@@ -1,10 +1,15 @@
 import { createContext, useState } from "react";
 import { Filter } from "../components/Filters/useFilters";
 import { Category } from "../components/Filters/Filters";
+import { products as initialProducts } from "../mocks/products.json";
+import { Product } from "../utils/interfaces/Product";
+
+console.log(initialProducts);
 
 interface FiltersContext {
   filters: Filter;
   setFilters: (prevState: React.SetStateAction<Filter>) => void;
+  products: Product[];
 }
 
 export const FilterContext = createContext<FiltersContext>({
@@ -13,6 +18,7 @@ export const FilterContext = createContext<FiltersContext>({
     price: 0,
   },
   setFilters: () => {},
+  products: initialProducts,
 });
 
 export function FiltersProvider({
@@ -29,6 +35,7 @@ export function FiltersProvider({
       value={{
         filters,
         setFilters,
+        products: initialProducts,
       }}
     >
       {children}

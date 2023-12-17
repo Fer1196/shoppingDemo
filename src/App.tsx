@@ -5,7 +5,6 @@ import { Product } from "./utils/interfaces/Product";
 import { products as initialProducts } from "./mocks/products.json";
 import { useFilters } from "./components/Filters/useFilters";
 import { GridProducts } from "./components/GridProducts/GridProducts";
-import { Footer } from "./components/Footer";
 
 function App() {
   const [products] = useState<Product[]>(initialProducts);
@@ -16,7 +15,6 @@ function App() {
     <>
       <Header />
       <GridProducts products={filteredProducts} />
-      <Footer />
     </>
   );
 }

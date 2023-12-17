@@ -1,15 +1,30 @@
 import "./DetailProduct.css";
 import { products as initialProducts } from "../../mocks/products.json";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { FilterContext } from "../../context/filtersContext";
+import { Product } from "../../utils/interfaces/Product";
+import { useNavigatePages } from "../../hooks/useNavigatePages";
 
 function DetailProduct() {
+  const { handleNavigation } = useNavigatePages();
+  const { products } = useContext(FilterContext);
+  const { id } = useParams();
+
+  const itemShow: Product =
+    products.find((item) => {
+      return item.id === parseInt(id ?? "0", 10);
+    }) || initialProducts[0];
+
+  console.log(itemShow);
   return (
     <div>
       <div className="grid-container">
         <div className="grid-item">
-          <h1>{initialProducts[3].title}</h1>
+          <h1>{itemShow.title}</h1>
 
           <img
-            src={initialProducts[3].thumbnail}
+            src={itemShow.thumbnail}
             alt="Preview"
             style={{
               // width: "100%",
@@ -24,12 +39,12 @@ function DetailProduct() {
               textAlign: "justify",
             }}
           >
-            {initialProducts[3].description}
+            {itemShow.description}
           </span>
 
           <div className="background">
             <div className="gallery">
-              {initialProducts[3].images.map((image) => {
+              {itemShow.images.map((image) => {
                 return (
                   <div className="card">
                     <figure>
@@ -70,7 +85,7 @@ function DetailProduct() {
                 fontSize: "30px",
               }}
             >
-              {initialProducts[3].title}
+              {itemShow.title}
             </span>
           </div>
 
@@ -88,7 +103,7 @@ function DetailProduct() {
                 fontSize: "30px",
               }}
             >
-              {initialProducts[3].category}
+              {itemShow.category}
             </span>
           </div>
 
@@ -106,7 +121,7 @@ function DetailProduct() {
                 fontSize: "30px",
               }}
             >
-              % {initialProducts[3].discountPercentage}
+              % {itemShow.discountPercentage}
             </span>
           </div>
 
@@ -124,7 +139,7 @@ function DetailProduct() {
                 fontSize: "30px",
               }}
             >
-              {initialProducts[3].price}
+              {itemShow.price}
             </span>
           </div>
 
@@ -134,6 +149,9 @@ function DetailProduct() {
               padding: "20px",
               backgroundColor: "#FF4D4D",
               borderRadius: "10px",
+            }}
+            onClick={() => {
+              handleNavigation("/cart");
             }}
           >
             Agregar al carrito
