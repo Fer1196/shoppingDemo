@@ -6,6 +6,8 @@
   right: 0px;
   top: 0px;
   width: 200px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
 }
 
 .cartShop img {

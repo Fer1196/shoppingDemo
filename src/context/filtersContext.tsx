@@ -4,8 +4,6 @@ import { Category } from "../components/Filters/Filters";
 import { products as initialProducts } from "../mocks/products.json";
 import { Product } from "../utils/interfaces/Product";
 
-console.log(initialProducts);
-
 interface FiltersContext {
   filters: Filter;
   setFilters: (prevState: React.SetStateAction<Filter>) => void;
@@ -16,6 +14,7 @@ export const FilterContext = createContext<FiltersContext>({
   filters: {
     category: "all",
     price: 0,
+    searchWord: "",
   },
   setFilters: () => {},
   products: initialProducts,
@@ -29,6 +28,7 @@ export function FiltersProvider({
   const [filters, setFilters] = useState<Filter>({
     category: "all" as Category,
     price: 0,
+    searchWord: "",
   });
   return (
     <FilterContext.Provider

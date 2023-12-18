@@ -1,7 +1,6 @@
 import "./Filters.css";
 import { Category } from "@mui/icons-material";
-import { Filter, useFilters } from "./useFilters";
-import { ChangeEvent, useId } from "react";
+import { useFilter } from "./useFilter";
 
 export type Category =
   | "all"
@@ -15,23 +14,14 @@ export type Category =
   | "laptops";
 
 export function Filters() {
-  const minPriceFilterId = useId();
-  const categoryFilterId = useId();
-  const { filters, setFilters } = useFilters();
-
-  const handlePriceCounter = (event: ChangeEvent<HTMLInputElement>) => {
-    setFilters((prevState: Filter) => ({
-      ...prevState,
-      price: parseInt(event.target.value, 10),
-    }));
-  };
-
-  const handleCategory = (event: ChangeEvent<HTMLSelectElement>) => {
-    setFilters((prevState: Filter) => ({
-      ...prevState,
-      category: event.target.value as Category,
-    }));
-  };
+  const {
+    minPriceFilterId,
+    categoryFilterId,
+    filters,
+    handleCategory,
+    handlePriceCounter,
+    handleWord,
+  } = useFilter();
 
   return (
     <section className="filters">
@@ -53,7 +43,7 @@ export function Filters() {
       </div>
       <div>
         <label>Search</label>
-        <input type="text" placeholder="search" />
+        <input type="text" placeholder="search" onChange={handleWord} />
       </div>
       <div>
         <label htmlFor={categoryFilterId}>Category</label>

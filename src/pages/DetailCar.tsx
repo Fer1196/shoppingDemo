@@ -12,40 +12,19 @@ export function DetailCar() {
         <h1 className="cart-title">Carrito a Pagar</h1>
 
         <div className="cart-title-row">
-          <div
-            style={{
-              flex: "0 0 0%",
-            }}
-          >
+          <div className="row-first">
             <span className="cart-span">Qauntity</span>
           </div>
-          <div
-            style={{
-              flex: "20%",
-            }}
-          >
+          <div className="row-second">
             <span className="cart-span">Image</span>
           </div>
-          <div
-            style={{
-              flex: "1 1 40%",
-            }}
-          >
+          <div className="row-third">
             <span className="cart-span">Detail Product</span>
           </div>
-          <div
-            style={{
-              flex: "1 0 10%",
-            }}
-          >
+          <div className="row-four">
             <h2> Unit Price</h2>
           </div>
-          <div
-            style={{
-              flex: "1 0 10%",
-            }}
-            className="cart-span"
-          >
+          <div className="row-five">
             <h2> Total Price</h2>
           </div>
         </div>
@@ -54,40 +33,19 @@ export function DetailCar() {
           total += ele.price * ele.quantity;
           return (
             <div className="cart-list">
-              <div
-                style={{
-                  flex: "0 0 0%",
-                }}
-              >
+              <div className="row-first">
                 <span className="cart-span">{ele.quantity}</span>
               </div>
-              <div
-                style={{
-                  flex: "20%",
-                }}
-              >
+              <div className="row-second">
                 <img src={ele.thumbnail} className="list-img"></img>
               </div>
-              <div
-                style={{
-                  flex: "1 1 40%",
-                }}
-              >
+              <div className="row-third">
                 <span className="cart-span">{ele.title}</span>
               </div>
-              <div
-                style={{
-                  flex: "1 0 10%",
-                }}
-              >
+              <div className="row-four">
                 <span className="cart-span">{ele.price}</span>
               </div>
-              <div
-                style={{
-                  flex: "1 0 10%",
-                }}
-                className="cart-span"
-              >
+              <div className="row-five">
                 <span className="cart-span">
                   {(ele.price * ele.quantity).toFixed(2)}
                 </span>

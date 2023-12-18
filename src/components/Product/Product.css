@@ -9,6 +9,10 @@
   margin-bottom: 15px;
 }
 
+.product:hover {
+  transform: scale(1.1);
+}
+
 .product-header {
   padding-top: 10px;
   height: 10px;
@@ -17,4 +21,19 @@
   padding: 10px;
   color: white;
   font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.label-price {
+  color: #01eac2;
+  font-size: 22px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.5;
 }

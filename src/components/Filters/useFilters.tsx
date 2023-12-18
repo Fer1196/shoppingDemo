@@ -18,6 +18,7 @@ export type Refresh = "category" | "price";
 export interface Filter {
   category: string;
   price: number;
+  searchWord: string;
 }
 
 export function useFilters() {
@@ -25,10 +26,14 @@ export function useFilters() {
 
   const filterProducts = (products: Product[]) => {
     return products.filter((product: Product) => {
-      console.log(product.price, filters.price);
       return (
         product.price >= filters.price &&
-        (filters.category === "all" || product.category === filters.category)
+        (filters.category === "all" || product.category === filters.category) &&
+        (filters.searchWord !== ""
+          ? product.title
+              .toLowerCase()
+              .includes(filters.searchWord.toLowerCase())
+          : true)
       );
     });
   };

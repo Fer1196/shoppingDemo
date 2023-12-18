@@ -12,7 +12,7 @@ export interface ProductInfo extends ProductCart {
 
 export function Cart() {
   const cartCheckboxId = useId();
-  const { cart, addToCart, clearCart } = useCart();
+  const { cart, addToCart, clearCart, removeFromCart } = useCart();
   return (
     <>
       <label className="cartShop-button" htmlFor={cartCheckboxId}>
@@ -27,6 +27,7 @@ export function Cart() {
               <CartItem
                 key={product.id}
                 addToCart={() => addToCart(product)}
+                removeFromCart={() => removeFromCart(product)}
                 {...product}
               />
             );
@@ -39,6 +40,7 @@ export function Cart() {
         >
           <RemoveShoppingCartIcon />
         </button>
+        <div style={{ height: "60px" }}></div>
       </aside>
     </>
   );

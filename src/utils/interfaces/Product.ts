@@ -18,4 +18,5 @@ export interface ProductCart extends Product {
 
 export interface ProductInfo extends ProductCart {
   addToCart: () => void;
+  removeFromCart: () => void;
 }

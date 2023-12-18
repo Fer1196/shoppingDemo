@@ -1,5 +1,5 @@
 import App from "../App";
-import DetailProduct from "../components/DetailProduct/DetailProduct";
+import DetailProduct from "../pages/DetailProduct/DetailProduct";
 import { DetailCar } from "../pages/DetailCar";
 import { Welcome } from "../pages/Welcome";
 
@@ -14,10 +14,10 @@ interface Route {
 
 export const routes: Route[] = [
   {
-    path: "/welcome",
+    path: "/",
     Component: Welcome,
     name: "welcome",
-    to: "/welcome",
+    to: "/",
   },
   {
     path: "/shopping",
@@ -37,16 +37,4 @@ export const routes: Route[] = [
     name: "cart",
     to: "/cart",
   },
-  //   {
-  //     path: "/about",
-  //     Component: AboutPage,
-  //     name: "about",
-  //     to: "/about",
-  //   },
-  //   {
-  //     path: "/product/:id",
-  //     Component: Product,
-  //     name: "about",
-  //     to: "/about",
-  //   },
 ];

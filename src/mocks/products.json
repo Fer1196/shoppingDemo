@@ -506,24 +506,7 @@
         "https://i.dummyjson.com/data/products/23/thumbnail.jpg"
       ]
     },
-    {
-      "id": 24,
-      "title": "UBOTIE Coloridas",
-      "description": "UBOTIE Colorful Computer Wireless Keyboard Mouse Combos, Typewriter Flexible Keys Office Full-Sized Keyboard, 2.4GHz Dropout-Free Connection and Optical Mouse (Black-Colorful)",
-      "price": 39.99,
-      "discountPercentage": 0,
-      "rating": 4.94,
-      "stock": 113,
-      "brand": "UBOTIE",
-      "category": "keyboards",
-      "thumbnail": "https://m.media-amazon.com/images/I/71bR4kgMMCL._AC_SY355_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/I/71bR4kgMMCL._AC_SY355_.jpg",
-        "https://m.media-amazon.com/images/I/71bR4kgMMCL._AC_SY355_.jpg",
-        "https://m.media-amazon.com/images/I/71sa5p3pj0L._AC_SY355_.jpg",
-        "https://m.media-amazon.com/images/I/71TxHKKIqWL._AC_SY355_.jpg"
-      ]
-    },
+
     {
       "id": 25,
       "title": "Gulab Powder 50 Gram",

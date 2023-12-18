@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./ImageGrid.css";
 
 export interface Props {
   image: string;
@@ -8,22 +9,9 @@ export interface Props {
 export const ImageGrid = ({ image, id }: Props) => {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        width: "250px",
-        height: "250px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="image-div">
       <img
         src={image}
-        style={{
-          padding: "10px",
-          width: "calc(100% - 20px)",
-          borderRadius: "20px",
-        }}
         onClick={() => {
           navigate(`/product/${id}`);
         }}
