@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 40%;
-  gap: 10px; /* Puedes ajustar este valor según tus necesidades */
+  gap: 10px;
 }
 
 .grid-item:first-child {
@@ -22,7 +22,6 @@
 }
 
 .grid-item {
-  /* border: 1px solid #ccc; */
   padding: 10px;
 }
 
@@ -34,9 +33,6 @@
 }
 
 .card {
-  /* position: relative;
-  left: 0px;
-  width: 600px; */
   border-radius: 16px;
   height: 200px;
   overflow: hidden;

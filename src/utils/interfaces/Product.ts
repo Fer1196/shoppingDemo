@@ -11,3 +11,11 @@ export interface Product {
   thumbnail: string;
   images: string[];
 }
+
+export interface ProductCart extends Product {
+  quantity: number;
+}
+
+export interface ProductInfo extends ProductCart {
+  addToCart: () => void;
+}
