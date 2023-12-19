@@ -1,9 +1,32 @@
 {
   "rewrites": [
-    { "source": "*", "destination": "/notroute" },
-    { "source": "/shopping", "destination": "/shopping" },
-    { "source": "/product/:id", "destination": "/product/:id" },
-    { "source": "/notroute", "destination": "/notroute" },
-    { "source": "/cart", "destination": "/cart" }
+
+       {"source": "/(.*)", "destination": "/"}.
+
+    {
+  "source": "/((?!notroute).*)",
+  "destination": "/notroute"
+},
+
+     {
+  "source": "/((?!shopping).*)",
+  "destination": "/shopping"
+},
+
+        {
+  "source": "/((?!cart).*)",
+  "destination": "/cart"
+},
+
+    {
+  "source": "/product/:type",
+  "destination": "/feedback/:id"
+}
+    
+
+  
+
+
+
   ]
 }
