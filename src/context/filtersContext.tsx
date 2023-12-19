@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Filter } from "../components/Filters/useFilters";
+import { Filter } from "../utils/interfaces/Filter.interface";
 import { Category } from "../components/Filters/Filters";
 import { products as initialProducts } from "../mocks/products.json";
 import { Product } from "../utils/interfaces/Product";

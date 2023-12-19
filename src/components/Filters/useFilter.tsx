@@ -1,6 +1,7 @@
 import { ChangeEvent, ChangeEventHandler, useId } from "react";
-import { Filter, useFilters } from "./useFilters";
+import { useFilters } from "./useFilters";
 import { Category } from "./Filters";
+import { Filter } from "../../utils/interfaces/Filter.interface";
 
 export function useFilter() {
   const minPriceFilterId = useId();

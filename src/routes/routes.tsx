@@ -1,4 +1,4 @@
-import App from "../App";
+import App from "../pages/App/App";
 import DetailProduct from "../pages/DetailProduct/DetailProduct";
 import { DetailCar } from "../pages/DetailCar";
 import { Welcome } from "../pages/Welcome";

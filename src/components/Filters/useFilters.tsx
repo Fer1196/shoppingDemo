@@ -2,29 +2,10 @@ import { useContext } from "react";
 import { FilterContext } from "../../context/filtersContext";
 import { Product } from "../../utils/interfaces/Product";
 
-export type Category =
-  | "all"
-  | "computers"
-  | "keyboards"
-  | "home-decoration"
-  | "smartphones"
-  | "fragrances"
-  | "skincare"
-  | "groceries"
-  | "laptops";
-
-export type Refresh = "category" | "price";
-
-export interface Filter {
-  category: string;
-  price: number;
-  searchWord: string;
-}
-
 export function useFilters() {
-  const { filters, setFilters } = useContext(FilterContext);
+  const { filters, setFilters, products } = useContext(FilterContext);
 
-  const filterProducts = (products: Product[]) => {
+  const filterProducts = () => {
     return products.filter((product: Product) => {
       return (
         product.price >= filters.price &&

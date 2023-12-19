@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { useNavigatePages } from "../../hooks/useNavigatePages";
-import { FilterContext } from "../../context/filtersContext";
+import { useNavigatePages } from "../../../hooks/useNavigatePages";
+import { FilterContext } from "../../../context/filtersContext";
 import { useParams } from "react-router-dom";
-import { useCart } from "../../hooks/useCart";
-import { products as initialProducts } from "../../mocks/products.json";
-import { Product } from "../../utils/interfaces/Product";
+import { useCart } from "../../../hooks/useCart";
+import { products as initialProducts } from "../../../mocks/products.json";
+import { Product } from "../../../utils/interfaces/Product";
 
 export function useDetailProducts() {
   const { handleNavigation } = useNavigatePages();

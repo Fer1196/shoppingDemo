@@ -4,7 +4,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { BriefDetail } from "../../components/BriefDetail/BriefDetail";
 import { GalleryImages } from "../../components/GalleryImages/GalleryIImages";
 import { CustomizeButton } from "../../components/CustomizeButton/CustomizeButton";
-import { useDetailProducts } from "./useDetailProducts";
+import { useDetailProducts } from "./hook/useDetailProducts";
 
 function DetailProduct() {
   const { handleNavigation, itemShow, addToCart } = useDetailProducts();
