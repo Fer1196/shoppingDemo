@@ -3,7 +3,7 @@
     { "source": "*", "destination": "/notroute" },
     { "source": "/shopping", "destination": "/shopping" },
     { "source": "/product/:id", "destination": "/product/:id" },
-    { "source": "/cart", "destination": "/cart" },
-    { "source": "/notroute", "destination": "/notroute" }
+    { "source": "/notroute", "destination": "/notroute" },
+    { "source": "/cart", "destination": "/cart" }
   ]
 }
