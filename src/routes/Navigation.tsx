@@ -8,7 +8,7 @@ export const Navigation = () => {
         {routes.map(({ path, Component, name }) => (
           <Route key={name} path={path} element={<Component />}></Route>
         ))}
-        <Route path="/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
