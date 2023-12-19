@@ -1,6 +1,6 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
-import { NotFound } from "../pages/NotFound";
+
 export const Navigation = () => {
   return (
     <BrowserRouter>
@@ -8,7 +8,7 @@ export const Navigation = () => {
         {routes.map(({ path, Component, name }) => (
           <Route key={name} path={path} element={<Component />}></Route>
         ))}
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/notroute" />} />
       </Routes>
     </BrowserRouter>
   );
