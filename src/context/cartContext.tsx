@@ -1,13 +1,7 @@
 import { createContext, useState } from "react";
 import { Product, ProductCart } from "../utils/interfaces/Product";
 import { toast } from "sonner";
-
-interface CartContextInterface {
-  cart: ProductCart[];
-  addToCart: (product: Product) => void;
-  removeFromCart: (product: Product) => void;
-  clearCart: () => void;
-}
+import { CartContextInterface } from "../utils/interfaces/CartContext.inteface";
 
 export const CartContext = createContext<CartContextInterface>({
   cart: [],

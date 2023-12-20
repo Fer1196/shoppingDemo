@@ -6,10 +6,6 @@ import { ProductCart } from "../../utils/interfaces/Product.ts";
 import { CartItem } from "../CartItem/CartItem.tsx";
 import { useCart } from "../../hooks/useCart.tsx";
 
-export interface ProductInfo extends ProductCart {
-  addToCart: () => void;
-}
-
 export function Cart() {
   const cartCheckboxId = useId();
   const { cart, addToCart, clearCart, removeFromCart } = useCart();

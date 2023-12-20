@@ -1,12 +1,5 @@
-import { ReactElement } from "react";
 import "./CustomizeButton.css";
-
-interface CustomizePropsButton {
-  onclick: () => void;
-  text: string;
-  children?: ReactElement | ReactElement[];
-  color: string;
-}
+import { CustomizePropsButton } from "../../utils/interfaces/CustomizePropsButton.interface";
 
 export function CustomizeButton({
   onclick,

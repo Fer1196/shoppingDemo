@@ -1,8 +1,9 @@
 import App from "../pages/App/App";
 import DetailProduct from "../pages/DetailProduct/DetailProduct";
-import { DetailCar } from "../pages/DetailCar";
+import { DetailCar } from "../pages/DetailCar/DetailCar";
 import { Welcome } from "../pages/Welcome";
 import { NotFound } from "../pages/NotFound";
+import { Devolution } from "../pages/Devolution";
 
 type JSXComponent = () => JSX.Element;
 
@@ -37,6 +38,12 @@ export const routes: Route[] = [
     Component: DetailCar,
     name: "cart",
     to: "/cart",
+  },
+  {
+    path: "/devolution",
+    Component: Devolution,
+    name: "devolution",
+    to: "/devolution",
   },
   {
     path: "/notroute",

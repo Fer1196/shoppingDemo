@@ -1,6 +1,6 @@
-import { Cart } from "../components/Cart/Carts";
-import { useCart } from "../hooks/useCart";
-import { ProductCart } from "../utils/interfaces/Product";
+import { Cart } from "../../components/Cart/Carts";
+import { useCart } from "../../hooks/useCart";
+import { ProductCart } from "../../utils/interfaces/Product";
 import "./DetailCar.css";
 export function DetailCar() {
   const { cart } = useCart();

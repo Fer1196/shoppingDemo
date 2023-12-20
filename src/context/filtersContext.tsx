@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import { Filter } from "../utils/interfaces/Filter.interface";
-import { Category } from "../components/Filters/Filters";
 import { products as initialProducts } from "../mocks/products.json";
 import { Product } from "../utils/interfaces/Product";
 
@@ -26,7 +25,7 @@ export function FiltersProvider({
   children: JSX.Element[] | JSX.Element;
 }) {
   const [filters, setFilters] = useState<Filter>({
-    category: "all" as Category,
+    category: "all" as string,
     price: 0,
     searchWord: "",
   });

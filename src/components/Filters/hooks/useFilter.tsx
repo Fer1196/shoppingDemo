@@ -1,7 +1,6 @@
 import { ChangeEvent, ChangeEventHandler, useId } from "react";
-import { useFilters } from "./useFilters";
-import { Category } from "./Filters";
-import { Filter } from "../../utils/interfaces/Filter.interface";
+import { useFilters } from "../../../hooks/useFilters";
+import { Filter } from "../../../utils/interfaces/Filter.interface";
 
 export function useFilter() {
   const minPriceFilterId = useId();
@@ -19,7 +18,7 @@ export function useFilter() {
   const handleCategory = (event: ChangeEvent<HTMLSelectElement>) => {
     setFilters((prevState: Filter) => ({
       ...prevState,
-      category: event.target.value as Category,
+      category: event.target.value as string,
     }));
   };
   const handleWord: ChangeEventHandler<HTMLInputElement> = (event) => {

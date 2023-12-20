@@ -1,4 +1,4 @@
-import { useFilters } from "../../../components/Filters/useFilters";
+import { useFilters } from "../../../hooks/useFilters";
 import { Product } from "../../../utils/interfaces/Product";
 
 export function useApp() {

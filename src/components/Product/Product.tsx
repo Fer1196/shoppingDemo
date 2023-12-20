@@ -4,7 +4,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Product.css";
 import { useCart } from "../../hooks/useCart";
 
-export interface Props {
+interface Props {
   item: ProductInterface;
 }
 

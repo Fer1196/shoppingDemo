@@ -1,17 +1,5 @@
 import "./Filters.css";
-import { Category } from "@mui/icons-material";
-import { useFilter } from "./useFilter";
-
-export type Category =
-  | "all"
-  | "computers"
-  | "keyboards"
-  | "home-decoration"
-  | "smartphones"
-  | "fragrances"
-  | "skincare"
-  | "groceries"
-  | "laptops";
+import { useFilter } from "./hooks/useFilter";
 
 export function Filters() {
   const {
