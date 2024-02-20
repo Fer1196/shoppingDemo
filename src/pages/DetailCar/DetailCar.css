@@ -1,3 +1,20 @@
+.dataCustomer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  justify-content: center;
+
+  border: 3px solid white;
+  padding: 1rem;
+}
+
+.dataRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .cart {
   display: flex;
   flex-direction: column;
