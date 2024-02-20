@@ -2,7 +2,6 @@ import { Cart } from "../../components/Cart/Carts";
 import { useCart } from "../../hooks/useCart";
 import { ProductCart } from "../../utils/interfaces/Product";
 import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
 import "./DetailCar.css";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -31,10 +30,10 @@ const useStyles = makeStyles({
         color: "#01eac2",
       },
       "& .MuiFormLabel-root": {
-        color: "#01eac2", // Color del texto del placeholder cuando el TextField está inactivo
+        color: "#01eac2",
       },
       "& .MuiInputLabel-outlined.MuiInputLabel-shrink": {
-        transform: "translate(14px, -6px) scale(0.75)", // Ajuste para el texto del placeholder cuando el TextField está inactivo
+        transform: "translate(14px, -6px) scale(0.75)",
       },
     },
   },
