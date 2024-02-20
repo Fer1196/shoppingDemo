@@ -4,6 +4,8 @@ import { ProductCart } from "../../utils/interfaces/Product";
 import TextField from "@mui/material/TextField";
 import "./DetailCar.css";
 import { makeStyles } from "@material-ui/core/styles";
+import { BillNote, DetailBill } from "../../utils/interfaces/BillNote";
+import { useState } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -43,12 +45,82 @@ export function DetailCar() {
   const { cart } = useCart();
   let total: number = 0;
   const classes = useStyles();
+
+  ///
+
+  const [cedula, setCedula] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleChange = (event: { target: { value: any } }) => {
+    setCedula(event.target.value);
+  };
+
+  const handleNombre = (event: { target: { value: any } }) => {
+    setNombre(event.target.value);
+  };
+
+  const handleApellido = (event: { target: { value: any } }) => {
+    setApellido(event.target.value);
+  };
+
+  const handleDireccion = (event: { target: { value: any } }) => {
+    setDireccion(event.target.value);
+  };
+
+  const handleEmail = (event: { target: { value: any } }) => {
+    setEmail(event.target.value);
+  };
+
+  const createBodyBill = (): BillNote => {
+    const detailBill: DetailBill[] = [];
+
+    cart.map((el) => {
+      detailBill.push({
+        idProduct: el.id,
+        quantity: el.quantity,
+        value: el.price,
+      });
+    });
+
+    return {
+      customer: {
+        name: nombre,
+        lastName: apellido,
+        address: direccion,
+        mail: email,
+        identificationNumber: cedula,
+      },
+      detailBill: detailBill,
+    };
+  };
+
+  const callBill = () => {
+    fetch("https://rickandmortyapi.com/api/character", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Puedes añadir más encabezados según sea necesario
+      },
+      body: JSON.stringify(createBodyBill()),
+    })
+      .then(async (res) => await res.json())
+      .then((res) => {
+        // Manejar la respuesta aquí
+        console.log(res);
+      })
+      .catch((error) => {
+        // Manejar errores aquí
+        console.error("Error al enviar la solicitud:", error);
+      });
+  };
   return (
     <>
       <Cart />
       <div className="cart">
         <div className="dataCustomer">
-          {" "}
           <div className="dataRow">
             <h2 className="cart-title">Datos de Facturacion</h2>
 
@@ -63,6 +135,8 @@ export function DetailCar() {
               InputProps={{
                 style: { color: "#01eac2" },
               }}
+              value={cedula}
+              onChange={handleChange}
             />
           </div>
           <div className="dataRow">
@@ -77,6 +151,8 @@ export function DetailCar() {
               InputProps={{
                 style: { color: "#01eac2" },
               }}
+              value={nombre}
+              onChange={handleNombre}
             />
             <TextField
               className={classes.root}
@@ -89,6 +165,8 @@ export function DetailCar() {
               InputProps={{
                 style: { color: "#01eac2" },
               }}
+              value={apellido}
+              onChange={handleApellido}
             />
           </div>
           <div className="dataRow">
@@ -103,6 +181,8 @@ export function DetailCar() {
               InputProps={{
                 style: { color: "#01eac2" },
               }}
+              value={direccion}
+              onChange={handleDireccion}
             />
 
             <TextField
@@ -116,6 +196,8 @@ export function DetailCar() {
               InputProps={{
                 style: { color: "#01eac2" },
               }}
+              value={email}
+              onChange={handleEmail}
             />
           </div>
         </div>
@@ -173,7 +255,9 @@ export function DetailCar() {
           </div>
         </div>
 
-        <button className="cart-button">Pay</button>
+        <button onClick={() => callBill()} className="cart-button">
+          Pay
+        </button>
       </div>
     </>
   );
