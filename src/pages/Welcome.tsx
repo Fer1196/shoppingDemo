@@ -20,7 +20,7 @@ export function Welcome() {
         text="Solicitar Devolution Fast"
         color="#acc2ef"
         onclick={() => {
-          handleNavigation(`/devolution`);
+          handleNavigation(`/bills`);
         }}
       ></CustomizeButton>
 

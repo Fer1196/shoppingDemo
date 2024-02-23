@@ -3,7 +3,7 @@ import DetailProduct from "../pages/DetailProduct/DetailProduct";
 import { DetailCar } from "../pages/DetailCar/DetailCar";
 import { Welcome } from "../pages/Welcome";
 import { NotFound } from "../pages/NotFound";
-import { Devolution } from "../pages/Devolution";
+// import { Devolution } from "../pages/Devolution";
 import { Bills } from "../pages/App/Bills/Bills";
 
 type JSXComponent = () => JSX.Element;
@@ -48,7 +48,7 @@ export const routes: Route[] = [
   },
   {
     path: "/devolution",
-    Component: Devolution,
+    Component: Bills,
     name: "devolution",
     to: "/devolution",
   },
