@@ -5,7 +5,18 @@ import { Navigation } from "./routes/Navigation.tsx";
 import { CartProvider } from "./context/cartContext.tsx";
 import { Toaster } from "sonner";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+// ReactDOM.createRoot(document.getElementById("root")!).render(
+//   <>
+//     <FiltersProvider>
+//       <CartProvider>
+//         <Toaster richColors />
+//         <Navigation />
+//       </CartProvider>
+//     </FiltersProvider>
+//   </>,
+// );
+
+ReactDOM.render(
   <>
     <FiltersProvider>
       <CartProvider>
@@ -14,4 +25,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       </CartProvider>
     </FiltersProvider>
   </>,
+  document.getElementById("root"),
 );
