@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { Product, ProductCart } from "../utils/interfaces/Product";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 import { CartContextInterface } from "../utils/interfaces/CartContext.inteface";
 
 export const CartContext = createContext<CartContextInterface>({
@@ -26,9 +26,9 @@ export function CartProvider({
     if (productInCartIndex >= 0) {
       const newCart: ProductCart[] = structuredClone(cart);
       newCart[productInCartIndex].quantity += 1;
-      toast.success(
-        `Item ${product.title}  ahora tiene ${newCart[productInCartIndex].quantity}  unidades`,
-      );
+      // toast.success(
+      //   `Item ${product.title}  ahora tiene ${newCart[productInCartIndex].quantity}  unidades`,
+      // );
       return setCart(newCart);
     }
 
@@ -39,12 +39,12 @@ export function CartProvider({
         quantity: 1,
       },
     ]);
-    toast.success(`Item ${product.title}  agregado correctamente`);
+    // toast.success(`Item ${product.title}  agregado correctamente`);
   };
 
   const removeFromCart = (product: Product) => {
     setCart((prevState) => prevState.filter((item) => item.id !== product.id));
-    toast.info(`Item ${product.title} se ha borrado correctamente`);
+    // toast.info(`Item ${product.title} se ha borrado correctamente`);
   };
 
   const clearCart = () => {
