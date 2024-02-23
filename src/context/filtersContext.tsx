@@ -57,7 +57,6 @@ export function FiltersProvider({
     const params = new URLSearchParams({
       description: filters.searchWord,
       category: filters.category === "all" ? "" : filters.category,
-      aggregate: false,
     });
 
     fetch(`${url}?${params.toString()}`, {
