@@ -1,5 +1,5 @@
 import { CustomizeButton } from "../components/CustomizeButton/CustomizeButton";
-//import { toast } from "sonner";
+import { toast } from "sonner";
 import TextField from "@mui/material/TextField";
 import { useNavigatePages } from "../hooks/useNavigatePages";
 
@@ -21,10 +21,10 @@ export function Devolution() {
         text="Hacer devolución"
         color="#FF4081"
         onclick={() => {
-          // toast.success(
-          //   `La devolución de su pedido  se ha ingresado correctamente correctamente.
-          //   Nos pondremos en contracto lo antes posible`,
-          // );
+          toast.success(
+            `La devolución de su pedido  se ha ingresado correctamente correctamente. 
+            Nos pondremos en contracto lo antes posible`,
+          );
         }}
       ></CustomizeButton>
 
