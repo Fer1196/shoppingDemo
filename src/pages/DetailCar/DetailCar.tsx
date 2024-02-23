@@ -3,50 +3,50 @@ import { useCart } from "../../hooks/useCart";
 import { ProductCart } from "../../utils/interfaces/Product";
 import TextField from "@mui/material/TextField";
 import "./DetailCar.css";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import { BillNote, DetailBill } from "../../utils/interfaces/BillNote";
 import { useState } from "react";
 import { REACT_APP_MS_URL } from "../../env";
 import { useNavigatePages } from "../../hooks/useNavigatePages";
 
-const useStyles = makeStyles({
-  root: {
-    "& label.Mui-focused": {
-      color: "#01eac2",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "#01eac2",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "#01eac2",
-      },
-      "&:hover fieldset": {
-        borderColor: "#01eac2",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#01eac2",
-      },
-      "& input": {
-        color: "#01eac2",
-      },
-      "& placeholder": {
-        color: "#01eac2",
-      },
-      "& .MuiFormLabel-root": {
-        color: "#01eac2",
-      },
-      "& .MuiInputLabel-outlined.MuiInputLabel-shrink": {
-        transform: "translate(14px, -6px) scale(0.75)",
-      },
-    },
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     "& label.Mui-focused": {
+//       color: "#01eac2",
+//     },
+//     "& .MuiInput-underline:after": {
+//       borderBottomColor: "#01eac2",
+//     },
+//     "& .MuiOutlinedInput-root": {
+//       "& fieldset": {
+//         borderColor: "#01eac2",
+//       },
+//       "&:hover fieldset": {
+//         borderColor: "#01eac2",
+//       },
+//       "&.Mui-focused fieldset": {
+//         borderColor: "#01eac2",
+//       },
+//       "& input": {
+//         color: "#01eac2",
+//       },
+//       "& placeholder": {
+//         color: "#01eac2",
+//       },
+//       "& .MuiFormLabel-root": {
+//         color: "#01eac2",
+//       },
+//       "& .MuiInputLabel-outlined.MuiInputLabel-shrink": {
+//         transform: "translate(14px, -6px) scale(0.75)",
+//       },
+//     },
+//   },
+// });
 
 export function DetailCar() {
   const { cart } = useCart();
   let total: number = 0;
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const { handleNavigation } = useNavigatePages();
 
@@ -141,7 +141,7 @@ export function DetailCar() {
           </div>
           <div className="dataRow">
             <TextField
-              className={classes.root}
+              //className={classes.root}
               id="outlined-basic"
               label="Nombre"
               variant="outlined"
@@ -155,7 +155,7 @@ export function DetailCar() {
               onChange={handleNombre}
             />
             <TextField
-              className={classes.root}
+              //className={classes.root}
               id="outlined-basic"
               label="Apellido"
               variant="outlined"
@@ -171,7 +171,7 @@ export function DetailCar() {
           </div>
           <div className="dataRow">
             <TextField
-              className={classes.root}
+              //className={classes.root}
               id="outlined-basic"
               label="Direccion"
               variant="outlined"
@@ -186,7 +186,7 @@ export function DetailCar() {
             />
 
             <TextField
-              className={classes.root}
+              //className={classes.root}
               id="outlined-basic"
               label="Email"
               variant="outlined"
