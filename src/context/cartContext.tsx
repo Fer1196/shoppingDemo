@@ -17,9 +17,11 @@ export function CartProvider({
 }) {
   const [cart, setCart] = useState<ProductCart[]>([]);
   const addToCart = (product: Product) => {
-    const productInCartIndex = cart.findIndex(
-      (item: ProductCart) => item.id === product.id,
-    );
+    const productInCartIndex = cart.findIndex((item: ProductCart) => {
+      console.log(item, product);
+
+      return item.idProduct === product.idProduct;
+    });
 
     if (productInCartIndex >= 0) {
       const newCart: ProductCart[] = structuredClone(cart);

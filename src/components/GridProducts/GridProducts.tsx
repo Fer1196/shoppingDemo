@@ -7,7 +7,7 @@ export const GridProducts = ({ products }: { products: ProductItem[] }) => {
     <>
       <div className="grid">
         {products.map((item: ProductItem) => {
-          return <Product item={item} key={item.id} />;
+          return item.stock > 0 && <Product item={item} key={item.id} />;
         })}
       </div>
     </>

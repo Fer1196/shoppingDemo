@@ -1,132 +1,22 @@
 import { useEffect, useState } from "react";
 import "./Bills.css";
 import { Bills } from "../../../utils/interfaces/Bills.interface";
+import { REACT_APP_MS_URL } from "../../../env";
 
 export function Bills() {
   const [bills, setBills] = useState<Bills[]>([]);
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch(`${REACT_APP_MS_URL}/ms-comp-sales/bills`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      //body: JSON.stringify(createBodyBill()),
+    })
       .then(async (res) => await res.json())
       .then((res) => {
-        setBills([
-          {
-            idBill: 1,
-            customer: {
-              idCustomer: 1,
-              name: "Andrea",
-              lastName: "Orellana",
-              address: "La Troncal",
-              mail: "ado.poi@gmail.com",
-              identificationNumber: "0985945236",
-            },
-            detailBill: [
-              {
-                idDetailBill: 1,
-                idBill: 1,
-                idProduct: 1,
-                quantity: 2,
-                value: 1.5,
-              },
-            ],
-            subTotal: 3,
-            total: 3.36,
-            iva: 0.36,
-          },
-          {
-            idBill: 1,
-            customer: {
-              idCustomer: 1,
-              name: "Andrea",
-              lastName: "Orellana",
-              address: "La Troncal",
-              mail: "ado.poi@gmail.com",
-              identificationNumber: "0985945236",
-            },
-            detailBill: [
-              {
-                idDetailBill: 1,
-                idBill: 1,
-                idProduct: 1,
-                quantity: 2,
-                value: 1.5,
-              },
-            ],
-            subTotal: 3,
-            total: 3.36,
-            iva: 0.36,
-          },
-          {
-            idBill: 1,
-            customer: {
-              idCustomer: 1,
-              name: "Andrea",
-              lastName: "Orellana",
-              address: "La Troncal",
-              mail: "ado.poi@gmail.com",
-              identificationNumber: "0985945236",
-            },
-            detailBill: [
-              {
-                idDetailBill: 1,
-                idBill: 1,
-                idProduct: 1,
-                quantity: 2,
-                value: 1.5,
-              },
-            ],
-            subTotal: 3,
-            total: 3.36,
-            iva: 0.36,
-          },
-          {
-            idBill: 1,
-            customer: {
-              idCustomer: 1,
-              name: "Andrea",
-              lastName: "Orellana",
-              address: "La Troncal",
-              mail: "ado.poi@gmail.com",
-              identificationNumber: "0985945236",
-            },
-            detailBill: [
-              {
-                idDetailBill: 1,
-                idBill: 1,
-                idProduct: 1,
-                quantity: 2,
-                value: 1.5,
-              },
-            ],
-            subTotal: 3,
-            total: 3.36,
-            iva: 0.36,
-          },
-          {
-            idBill: 1,
-            customer: {
-              idCustomer: 1,
-              name: "Andrea",
-              lastName: "Orellana",
-              address: "La Troncal",
-              mail: "ado.poi@gmail.com",
-              identificationNumber: "0985945236",
-            },
-            detailBill: [
-              {
-                idDetailBill: 1,
-                idBill: 1,
-                idProduct: 1,
-                quantity: 2,
-                value: 1.5,
-              },
-            ],
-            subTotal: 3,
-            total: 3.36,
-            iva: 0.36,
-          },
-        ]);
+        setBills(res);
         // initialState.current = res.results;
-        console.log(res);
       })
       .catch((err) => console.log(err));
   }, []);

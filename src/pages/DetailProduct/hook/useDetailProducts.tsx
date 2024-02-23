@@ -14,7 +14,11 @@ export function useDetailProducts() {
 
   const itemShow: Product =
     products.find((item) => {
-      return item.id === parseInt(id ?? "0", 10);
+      console.log(item, "mytem,");
+      console.log(id, "ID");
+      console.log(item.idProduct, "item.idProduct");
+
+      return item.idProduct === parseInt(id ?? "0", 10);
     }) || initialProducts[0];
 
   return { handleNavigation, itemShow, addToCart };

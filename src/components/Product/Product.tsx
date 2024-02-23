@@ -15,7 +15,7 @@ export const Product = ({ item }: Props) => {
       <div className="product-header">
         <span className="header-title">{item.title}</span>
       </div>
-      <ImageGrid image={item.thumbnail} id={item.id} />
+      <ImageGrid image={item.thumbnail} id={item.id ?? item.idProduct} />
       <div className="flex">
         <span className="label-price">${item.price}</span>
 

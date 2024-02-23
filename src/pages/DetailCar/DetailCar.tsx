@@ -6,6 +6,8 @@ import "./DetailCar.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { BillNote, DetailBill } from "../../utils/interfaces/BillNote";
 import { useState } from "react";
+import { REACT_APP_MS_URL } from "../../env";
+import { useNavigatePages } from "../../hooks/useNavigatePages";
 
 const useStyles = makeStyles({
   root: {
@@ -46,7 +48,7 @@ export function DetailCar() {
   let total: number = 0;
   const classes = useStyles();
 
-  ///
+  const { handleNavigation } = useNavigatePages();
 
   const [cedula, setCedula] = useState("");
   const [nombre, setNombre] = useState("");
@@ -54,22 +56,23 @@ export function DetailCar() {
   const [direccion, setDireccion] = useState("");
   const [email, setEmail] = useState("");
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleChange = (event: { target: { value: any } }) => {
     setCedula(event.target.value);
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleNombre = (event: { target: { value: any } }) => {
     setNombre(event.target.value);
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleApellido = (event: { target: { value: any } }) => {
     setApellido(event.target.value);
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDireccion = (event: { target: { value: any } }) => {
     setDireccion(event.target.value);
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleEmail = (event: { target: { value: any } }) => {
     setEmail(event.target.value);
   };
@@ -79,7 +82,7 @@ export function DetailCar() {
 
     cart.map((el) => {
       detailBill.push({
-        idProduct: el.id,
+        idProduct: el.id ?? el.idProduct,
         quantity: el.quantity,
         value: el.price,
       });
@@ -98,21 +101,18 @@ export function DetailCar() {
   };
 
   const callBill = () => {
-    fetch("https://rickandmortyapi.com/api/character", {
+    fetch(`${REACT_APP_MS_URL}/ms-comp-sales/bills`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Puedes añadir más encabezados según sea necesario
       },
       body: JSON.stringify(createBodyBill()),
     })
       .then(async (res) => await res.json())
       .then((res) => {
-        // Manejar la respuesta aquí
         console.log(res);
       })
       .catch((error) => {
-        // Manejar errores aquí
         console.error("Error al enviar la solicitud:", error);
       });
   };
@@ -199,6 +199,16 @@ export function DetailCar() {
               value={email}
               onChange={handleEmail}
             />
+          </div>
+          <div>
+            <button
+              onClick={() => {
+                handleNavigation(`/bills`);
+              }}
+              className="cart-button-middle"
+            >
+              Consultar Facturas
+            </button>
           </div>
         </div>
 

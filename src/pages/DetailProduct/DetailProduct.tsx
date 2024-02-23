@@ -2,12 +2,12 @@ import "./DetailProduct.css";
 import { Cart } from "../../components/Cart/Carts";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { BriefDetail } from "../../components/BriefDetail/BriefDetail";
-import { GalleryImages } from "../../components/GalleryImages/GalleryIImages";
 import { CustomizeButton } from "../../components/CustomizeButton/CustomizeButton";
 import { useDetailProducts } from "./hook/useDetailProducts";
 
 function DetailProduct() {
   const { handleNavigation, itemShow, addToCart } = useDetailProducts();
+  console.log(itemShow, "dssd");
 
   return (
     <>
@@ -23,8 +23,6 @@ function DetailProduct() {
               className="grid-item-image"
             />
             <span>{itemShow.description}</span>
-
-            <GalleryImages images={itemShow.images} />
           </div>
           <div className="grid-item">
             <BriefDetail itemShow={itemShow} />
