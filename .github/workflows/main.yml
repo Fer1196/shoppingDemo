@@ -12,4 +12,6 @@ jobs:
     steps:
     - name: Send notification to Slack
       run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, this is a message from GitHub Actions!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        commit_message=$(git log -1 --pretty=%B)
+        author_name=$(git log -1 --pretty=%an)
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"New commit on main branch:\n\nMessage: '"$commit_message"'\nAuthor: '"$author_name"'"}' ${{ secrets.SLACK_WEBHOOK_URL }}
